@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  <script>
+    const webhookURL = 'https://hooks.zapier.com/hooks/catch/25047529/ui3ey5a/';
+    const visitData = {
+      timestamp: new Date().toISOString(),
+      referrer: document.referrer,
+      user_agent: navigator.userAgent,
+      page_url: window.location.href
+    };
+    fetch(webhookURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(visitData)
+    }).catch(console.error);
+    setTimeout(() => {
+      window.location.href = 'https://linktr.ee/markhamthecloser';
+    }, 200);
+  </script>
+</head>
+<body style="font-family:Arial;text-align:center;padding:50px">
+  <h3>Loading your links...</h3>
+  <p>Redirecting to your Linktree...</p>
+</body>
+</html>
